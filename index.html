@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        height: 97vh;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(232, 231, 231);
+      }
+
+      #divparent {
+        height: 70vh;
+        width: 70vw;
+        background-color: white;
+        display: flex;
+        position: relative;
+        border: 1px solid black;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      #img1 {
+        height: 60vh;
+        margin-top: 20px;
+        position: relative;
+      }
+
+      #childdiv2 {
+        height: 60vh;
+        width: 32vw;
+        margin-top: 30px;
+        position: relative;
+        /* border: 1px solid; */
+        border-radius: 25px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        /* background-color: aqua; */
+      }
+
+      #nextline1 {
+        padding: 15px;
+        width: 300px;
+        margin-left: 70px;
+        margin-top: 20px;
+        border-radius: 20px;
+        border: none;
+        border: 0.5px solid grey;
+      }
+
+      #nextline {
+        display: block;
+        padding: 15px;
+        width: 300px;
+        margin-left: 70px;
+        margin-top: 20px;
+        border-radius: 20px;
+        border: none;
+        border: 0.5px solid grey;
+      }
+
+      #loginbtn {
+        margin: 30px;
+        width: 200px;
+        height: 30px;
+        border-radius: 30px;
+        border: none;
+        font-size: 16px;
+        margin-left: 135px;
+        /* background: linear-gradient(blue,orange); */
+      }
+
+      #regbtn {
+        padding: 5px;
+        border: none;
+        border-radius: 20px;
+        background-color: orchid;
+        height: 30px;
+        width: 120px;
+        margin-top: -20px;
+        font-size: 12px;
+        margin-left: 50px;
+      }
+
+      #regp {
+        margin-left: 50px;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <img src="./login/Login.jpg" alt=""> -->
+    <!-- <a href="./restaurantDOM.html"></a> -->
+    <!-- <img src="../Login.jp" alt=""> -->
+    <script>
+      // div parent
+      divParent = document.createElement("div");
+      divParent.setAttribute("id", "divparent");
+      document.body.appendChild(divParent);
+
+      // child div1
+      childdiv1 = document.createElement("img");
+      childdiv1.setAttribute("src", "../Login.jpg");
+      childdiv1.setAttribute("id", "img1");
+      divParent.appendChild(childdiv1);
+
+      // child div2
+
+      childdiv2 = document.createElement("div");
+      //    childdiv2.innerHTML="<center></center>"
+      childdiv2.setAttribute("id", "childdiv2");
+      divParent.appendChild(childdiv2);
+
+      //   heading
+
+      heading = document.createElement("h2");
+      heading.setAttribute("id", "heading");
+      heading.innerHTML = "<center>Login Here</center>";
+      childdiv2.appendChild(heading);
+
+      //form
+      form = document.createElement("form");
+      childdiv2.appendChild(form);
+
+      // form.addEventListener("submit", function () {
+      //   e.preventDefault();
+
+      // //   users = {
+      // //     username: e.target[0].value,
+      // //     password: e.target[1].value,
+      // //   };
+
+      // //   console.log(users);
+      // // });
+
+      username = document.createElement("input");
+      username.setAttribute("type", "text");
+      username.setAttribute("id", "nextline1");
+      username.setAttribute("placeholder", "Username");
+
+      form.appendChild(username);
+
+      //
+      username = document.createElement("input");
+      username.setAttribute("type", "password");
+      username.setAttribute("id", "nextline");
+      username.setAttribute("placeholder", "Password");
+
+      form.appendChild(username);
+
+      // login
+      var loginAnchor = document.createElement("a");
+      // loginAnchor.setAttribute("href", "../restaurantDOM.html");
+      var loginbtn = document.createElement("button");
+      loginbtn.setAttribute("type", "submit");
+      loginbtn.setAttribute("id", "loginbtn");
+      loginbtn.innerHTML = "Login";
+      loginAnchor.appendChild(loginbtn);
+      childdiv2.appendChild(loginAnchor);
+
+      // register
+      var registerAnchor = document.createElement("a");
+
+      var register = document.createElement("p");
+      register.setAttribute("id", "regp");
+      register.innerHTML = "Don't have an account?";
+      registerAnchor.appendChild(register);
+      childdiv2.appendChild(registerAnchor);
+
+      var registerBtnAnchor = document.createElement("a");
+      // registerBtnAnchor.setAttribute("href", "./restaurantDOM.html");
+      var loginbtn2 = document.createElement("button");
+      loginbtn2.setAttribute("id", "regbtn");
+      loginbtn2.innerHTML = "Register Here";
+      registerBtnAnchor.appendChild(loginbtn2);
+      childdiv2.appendChild(registerBtnAnchor);
+
+      // validation
+
+      // document.forms[0].addEventListener('submit',function(e){
+      //            e.preventDefault();
+
+      //            users={
+      //             username: e.target[0].value,
+      //             password:e.target[1].value,
+      //            }
+
+      //            console.log(users);
+
+      //         })
+
+      console.log(document.forms);
+    </script>
+  </body>
+</html>
